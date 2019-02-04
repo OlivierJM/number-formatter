@@ -6,12 +6,15 @@ import "./styles.css";
 
 function App() {
   const [number, setNumber] = useState("");
+  const [formattedNumber, setFormattedNumber] = useState(0);
   function parseNumber({ target: { value } }) {
     setNumber(value);
   }
   function validateNumber(e) {
     e.preventDefault();
-    console.log(appendCountryCode(hasPrefix(removeSymbol(number))));
+    setFormattedNumber(
+      appendCountryCode(hasPrefix(removeSymbol(number)), "260")
+    );
   }
   return (
     <div className="App">
@@ -20,6 +23,7 @@ function App() {
         <input type="text" value={number} onChange={parseNumber} />
         <button type="submit">validate</button>
       </form>
+      <p>{formattedNumber}</p>
     </div>
   );
 }
