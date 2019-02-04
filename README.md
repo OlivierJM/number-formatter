@@ -1,5 +1,7 @@
 # number-formatter
 
+check it out here in action https://codesandbox.io/s/github/OlivierJM/number-formatter
+
 > Say you are getting input from your users and you want to format it in a zambian mobile format.
 
 **Note**: This will be extended to accomodate more country codes
