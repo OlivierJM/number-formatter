@@ -19,9 +19,9 @@ function App() {
       <h1>Format Phone Number </h1>
       <form onSubmit={validateNumber}>
         <input type="text" value={number} onChange={parseNumber} />
-        <button type="submit">validate</button>
+        <button type="submit">format</button>
       </form>
-      <p>Formatted: {formattedNumber}</p>
+      {formattedNumber && <p>Formatted: {formattedNumber}</p>}
     </div>
   );
 }
