@@ -15,6 +15,8 @@ The return value should be formatted as follows **260 9XXXXXXXX**
 
 ## Included Functions
 
+Note: This solution follows functional programming approach, such as pure functions, function composition and currying.
+
 `removeSymbol` Checks if the number has a symbol in front and removes it, this is in case the number had a country code already.
 
 `hasPrefix` This checks if the country code existed, it runs after removing the symbol
