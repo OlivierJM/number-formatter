@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { removeSymbol, hasPrefix, appendCountryCode } from "./utils";
+import { formatNumber } from "./utils";
 
 import "./styles.css";
 
 function App() {
   const [number, setNumber] = useState("");
-  const [formattedNumber, setFormattedNumber] = useState(0);
+  const [formattedNumber, setFormattedNumber] = useState(null);
   function parseNumber({ target: { value } }) {
     setNumber(value);
   }
   function validateNumber(e) {
     e.preventDefault();
-    setFormattedNumber(
-      appendCountryCode(hasPrefix(removeSymbol(number)), "260")
-    );
+    setFormattedNumber(formatNumber(number)("260"));
   }
   return (
     <div className="App">
@@ -23,7 +21,7 @@ function App() {
         <input type="text" value={number} onChange={parseNumber} />
         <button type="submit">validate</button>
       </form>
-      <p>{formattedNumber}</p>
+      <p>Formatted: {formattedNumber}</p>
     </div>
   );
 }
