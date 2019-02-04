@@ -32,3 +32,21 @@ The return value should be formatted as follows **260 9XXXXXXXX**
     formatNumber(number)(code) // code being a country code
 
 ```
+
+Checking Tests, tests are located in `src/format.test.js`
+
+```Javascript
+
+  it("should add the country when number starts with 9", () => {
+    expect(formatNumber("943434")("260")).toEqual("260 943434");
+  });
+
+  it("should format even if the country code existed", () => {
+    expect(formatNumber("+260943434")("260")).toEqual("260 943434");
+  });
+
+  it("should format even if number is spaced out", () => {
+    expect(formatNumber("+260 943434")("260")).toEqual("260 943434");
+  });
+
+```

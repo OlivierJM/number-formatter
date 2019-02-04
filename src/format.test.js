@@ -24,4 +24,7 @@ describe("parseNumber", () => {
   it("should format even if the code existed", () => {
     expect(formatNumber("+260943434")("260")).toEqual("260 943434");
   });
+  it("should format even if number is spaced out", () => {
+    expect(formatNumber("+260 943434")("260")).toEqual("260 943434");
+  });
 });
