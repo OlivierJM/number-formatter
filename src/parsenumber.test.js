@@ -1,4 +1,4 @@
-import { removeSymbol, hasPrefix, appendCountryCode } from "./utils";
+import { removeSymbol, hasPrefix, formatNumber } from "./utils";
 
 describe("parseNumber", () => {
   it("should remove the symbol", () => {
@@ -16,7 +16,12 @@ describe("parseNumber", () => {
   it("should remove the symbol and display from the third index", () => {
     expect(hasPrefix(removeSymbol("+0943434"))).toEqual("943434");
   });
-  it("should add the country code", () => {
-    expect(appendCountryCode("943434", "260")).toEqual("260 943434");
+
+  // Test different cases for formatting numbers
+  it("should add the country when number starts with 9", () => {
+    expect(formatNumber("943434")("260")).toEqual("260 943434");
+  });
+  it("should format even if the code existed", () => {
+    expect(formatNumber("+260943434")("260")).toEqual("260 943434");
   });
 });

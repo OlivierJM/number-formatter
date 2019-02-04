@@ -15,4 +15,4 @@ const formatNumber = R.compose(
   removeSymbol
 );
 
-export { formatNumber };
+export { formatNumber, removeSymbol, hasPrefix };

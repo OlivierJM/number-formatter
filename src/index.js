@@ -16,7 +16,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
+      <h1>Format Phone Number </h1>
       <form onSubmit={validateNumber}>
         <input type="text" value={number} onChange={parseNumber} />
         <button type="submit">validate</button>
