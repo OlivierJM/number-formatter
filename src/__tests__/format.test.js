@@ -1,4 +1,4 @@
-import { removeSymbol, hasPrefix, formatNumber } from "./utils";
+import { removeSymbol, hasPrefix, formatNumber } from "../utils";
 
 describe("parseNumber", () => {
   it("should remove the symbol", () => {
