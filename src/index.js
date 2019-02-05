@@ -15,22 +15,22 @@ export function App() {
     setFormattedNumber(formatNumber(number)("260"));
   }
   return (
-    <div className="App">
+    <div className="App" aria-label="app">
       <h1>Format Phone Number </h1>
       <form onSubmit={validateNumber}>
-        <Input number={number} parseNumber={parseNumber} />
+        <Input number={number} onChange={parseNumber} />
         <button type="submit">format</button>
       </form>
       {formattedNumber && <p>Formatted: {formattedNumber}</p>}
     </div>
   );
 }
-export function Input({ number, parseNumber }) {
+export function Input({ number, onChange }) {
   return (
     <input
       type="text"
       value={number}
-      onChange={parseNumber}
+      onChange={onChange}
       aria-label="number-input"
     />
   );
