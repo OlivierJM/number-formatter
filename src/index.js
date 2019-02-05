@@ -25,14 +25,19 @@ export function App() {
     </div>
   );
 }
-export function Input({ number, onChange }) {
+export function Input({ number = "", onChange }) {
   return (
-    <input
-      type="text"
-      value={number}
-      onChange={onChange}
-      aria-label="number-input"
-    />
+    <div>
+      <label htmlFor="number">Number</label>
+      <input
+        type="text"
+        value={number}
+        onChange={onChange}
+        id="number"
+        aria-label="number-input"
+        placeholder="put in a number"
+      />
+    </div>
   );
 }
 
