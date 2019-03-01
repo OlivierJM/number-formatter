@@ -5,11 +5,16 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@types/jest": "24.0.9",
+    "@types/ramda": "0.25.51",
+    "@types/react": "16.8.6",
+    "@types/react-dom": "16.8.2",
     "ramda": "0.26.1",
     "react": "16.7.0-alpha.2",
     "react-dom": "16.7.0-alpha.2",
     "react-scripts": "2.0.3",
-    "react-testing-library": "5.4.4"
+    "react-testing-library": "5.4.4",
+    "typescript": "3.3.3333"
   },
   "devDependencies": {},
   "scripts": {

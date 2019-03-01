@@ -10,7 +10,7 @@ export function App() {
   function parseNumber({ target: { value } }) {
     setNumber(value);
   }
-  function validateNumber(e) {
+  function validateNumber(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setFormattedNumber(formatNumber(number)("260"));
   }
@@ -25,7 +25,12 @@ export function App() {
     </div>
   );
 }
-export function Input({ number = "", onChange }) {
+
+interface inputProps {
+  number: string;
+  onChange: any;
+}
+const Input: React.SFC<inputProps> = ({ number = "", onChange }) => {
   return (
     <div>
       <label htmlFor="number">Number</label>
@@ -39,7 +44,7 @@ export function Input({ number = "", onChange }) {
       />
     </div>
   );
-}
+};
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
